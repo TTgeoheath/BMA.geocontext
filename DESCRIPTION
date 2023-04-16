@@ -1,0 +1,31 @@
+Package: BMA.geocontext
+Type: Package
+Title: Lacunairty Integrated with Bayesian Model Averaging to Address Geographic Uncertainties
+Version: 0.0.0.9000
+Date: 2023-04-16
+Authors@R: c(
+    person("Tian", "Tian", email = "t.tian@uu.nl", role = c("aut", "cre")),
+    person("Mei-po", "Kwan", role = "aut"),
+    person("Roel", "Vermeulen", role = "aut"),
+    person("Marco", "Helbich", role = "aut")
+  )
+Description: 1)Functions encompass calculations of lacunarity using the gliding box method for both binary and continuous raster maps (lacunarity.R), 2)computation of exact points where the lacunarity curve plateaus (lac.limit.R),3)Bayesian model averaging pooled Cox regression for buffer selection (model.pp.R),4)and the averaged results of exposure-specific models weighted by Bayesian theorem (model.overall.R).
+Encoding: UTF-8
+Depends:
+ spatstat
+Imports: 
+ MASS,
+ survival,
+ dplyr,
+ soilphysics,
+ maptools,
+ RcppRoll,
+ spatstat.geom,
+ spatstat.core,
+ latticeExtra,
+ pracma,
+ minpack.lm
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+License: GPL(>=2)
