@@ -1,1 +1,1 @@
-# Lacunairty-Integrated-with-Bayesian-Model-Averaging-to-Address-Geographic-Uncertainties
+# bma_buffer
