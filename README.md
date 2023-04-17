@@ -32,7 +32,7 @@ test_lacunarity <- as.data.frame(la)
 data(test_survival,  package = "BMA.geocontext")
 test_survival <- as.data.frame(test_survial)
 # Results
- ---------- test_lacunarity
+ ---------- test_lacunarity---------------------------
     box_width lacunarity_values
 2          60          2.175266
 3          90          1.722891
@@ -47,7 +47,7 @@ test_survival <- as.data.frame(test_survial)
 12        360          1.276228
 13        390          1.261002
 14        420          1.247146
----------- test_survival
+---------- test_survival(sample)---------------------------------------------------------------------
    Status Survival_time Age Income Gender Origin Urbanization  bufND100  bufND200  bufND300  bufND400 
 1       0             7  63     44      2      1            4 0.3187178 0.3468641 0.3783087 0.4029252
 2       0             6  58     61      2      1            3 0.3615594 0.3767463 0.3918016 0.4149369
