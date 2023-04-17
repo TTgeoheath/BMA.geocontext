@@ -1,13 +1,12 @@
 # About
-This package contains four functions corresponding to a two-step approach for addressing residence-based geographic uncertainties. The lacunarity was
-used to determine the upper limits for appropriate buffer selection (gbl).The upper limits was found at the location of maximum curvature appears 
-(lac.limit). However, lacunarity assessment only yields the upper-scale limit of the buffer. Even when using buffer sizes within this range, 
-variations in the estimated effect sizes in health-environment associations may occur. To address this 
-issue, buffer sizes smaller than the upper limit was considered as a whole, while also taking into account the requirement for exposure-specific buffer 
-sizes in multi-exposure models. Multiple-scale Cox models were developed based on the buffer sizes delineated within the lacunarity-defined limits. 
-Bayesian Model Averaging was extended to Cox models to average effect estimates across all multiscale models, thus providing a more robust estimate. Each 
-model is weighted by posterior probability. The functions in our package can provide both the coefficients and posterior probabilities for each model 
-(model.pp) and an averaged estimate (model.overall). 
+This R package contains four functions corresponding to a two-step approach for addressing residence-based geographic uncertainties using buffer analyses.
+The lacunarity is used to determine the upper buffer limits (gbl()). The upper limit is determined through maximizing the curvature of the lacunarity 
+curve (lac.limit()). However, lacunarity assessment only yields the upper-scale limit of the buffer. Even when using buffer sizes within this range, 
+variations in the estimated effect sizes in the associations may occur. To address this issue, buffer sizes smaller than the upper limits are used within 
+a Bayesian model averaging framework. Multi-scale Cox models are developed based on the buffer sizes within the lacunarity-defined upper limits. We 
+extended Bayesian Model Averaging to the Cox regression model to average effect estimates across all multi-scale models, thus providing a more robust 
+estimate. Each model is weighted by its posterior probability. The functions provide the coefficients and posterior probabilities for each model
+(model.pp()) and an averaged estimate (model.overall()). 
 
 # Installation
 
