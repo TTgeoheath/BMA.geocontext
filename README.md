@@ -1,13 +1,13 @@
 # About
-This package contains four functions corresponding to a two-step approach for addressing residence-based geographic uncertainties. The lacunarity can be
-used to determine the upper limits for appropriate buffer selection (gbl).The upper limits is found at the location of maximum curvature (lac.limit).
-However, lacunarity assessment only yields the upper-scale limit of the buffer. Even when using buffer sizes within this range, 
+This package contains four functions corresponding to a two-step approach for addressing residence-based geographic uncertainties. The lacunarity was
+used to determine the upper limits for appropriate buffer selection (gbl).The upper limits was found at the location of maximum curvature appears 
+(lac.limit). However, lacunarity assessment only yields the upper-scale limit of the buffer. Even when using buffer sizes within this range, 
 variations in the estimated effect sizes in health-environment associations may occur. To address this 
-issue, buffer sizes smaller than the upper limit can be considered as a whole, while also taking into account the requirement for exposure-specific buffer 
-sizes in multi-exposure models. Multiple-scale Cox models can be developed based on the buffer sizes delineated within the lacunarity-defined limits. 
-Bayesian Model Averaging can be extended to Cox models to average effect estimates across all models, thus providing a more robust estimate. Each model is 
-weighted by posterior probability. The functions in our package can provide both the coefficients and posterior probabilities for each model (model.pp) 
-and an averaged estimate (model.overall). 
+issue, buffer sizes smaller than the upper limit was considered as a whole, while also taking into account the requirement for exposure-specific buffer 
+sizes in multi-exposure models. Multiple-scale Cox models were developed based on the buffer sizes delineated within the lacunarity-defined limits. 
+Bayesian Model Averaging was extended to Cox models to average effect estimates across all multiscale models, thus providing a more robust estimate. Each 
+model is weighted by posterior probability. The functions in our package can provide both the coefficients and posterior probabilities for each model 
+(model.pp) and an averaged estimate (model.overall). 
 
 # Installation
 
@@ -21,8 +21,8 @@ library(BMA.geocontext)
 
 ## Load the test data
 
-We provided two datasets to test our functions. The test_lacunarity can be used to test the function lac.limit for detecting the precise upper limit 
-of lacunarity curve. The test_survival can be used to test the model.pp (return the coefficients and posterial coefficient of each model) and 
+We provided two datasets to test our functions. The data "test_lacunarity" is used to test the function lac.limit for detecting the precise upper limit 
+of lacunarity curve. The data "test_survival" is used to test the model.pp (return the coefficients and posterial coefficient of each model) and 
 model.overall ( the averaged results for all models)
 
 ```r
@@ -68,7 +68,9 @@ test_survival <- as.data.frame(test_survial)
 
 ```
 ## Lacunarity analysis
-Unsing the funtion gbl(init_boxwidth,end_boxwidth,image, obserwin = Frame(image), raster_type = c("continuous", "binary"));
+Unsing the funtion gbl(init_boxwidth,end_boxwidth,image, obserwin = Frame(image), raster_type = c("continuous", "binary")) to calculate the lacunarity
+values against increased box width.
+
 "init_boxwidth" is the box width for the beginning box put in the corner of a raster surface;
 "end_boxwidth" is the box width for your identified last box;
 "image" is the image formate of the raster layer;
@@ -120,8 +122,9 @@ Available range of argument box_width: [60, 10260]
 ## Compute the flattened points (upper limit)
 The function lac.limit(data, box_sizes, lacunarity_values,start = list(a = 1, b = -1, c = 1)) computes the precise point where the lacunarity curve
 flattened out.
+
 "data" is a dataframe includes the boxsizes of the gliding boxes and their corresponding lacuanrity value;
-"box_sizes" The increased box widths of gliding boxes in lacunarity analysis;
+"box_sizes"  is the increased box widths of gliding boxes in lacunarity analysis;
 "lacunarity_values" is the corresponding lacunarity values of the increased box sizes given by lacunarity analysis;
 "start" is the start value of the curvature simulation. This function used a power function a * x^b + c to simulate the lacunarity curvature. Through
 simulation, the flattened point can be obtained by computing the maximum curvature. A start = list(a = 1, b = -1, c = 1) was set as default. Users can 
