@@ -71,7 +71,7 @@ test_survival <- as.data.frame(test_survial)
 Unsing the funtion gbl(init_boxwidth,end_boxwidth,image, obserwin = Frame(image), raster_type = c("continuous", "binary")) to calculate the lacunarity
 values against increased box width.
 
-"init_boxwidth" is the box width for the beginning box put in the corner of a raster surface;
+The parameter "init_boxwidth" is the box width for the beginning box put in the corner of a raster surface;
 "end_boxwidth" is the box width for your identified last box;
 "image" is the image formate of the raster layer;
 "obserwin" is the optional observation window. If provided, it will be the intersection of the specified observation window (obserwin) and the 
@@ -123,7 +123,7 @@ Available range of argument box_width: [60, 10260]
 The function lac.limit(data, box_sizes, lacunarity_values,start = list(a = 1, b = -1, c = 1)) computes the precise point where the lacunarity curve
 flattened out.
 
-"data" is a dataframe includes the boxsizes of the gliding boxes and their corresponding lacuanrity value;
+The parameter "data" is a dataframe includes the boxsizes of the gliding boxes and their corresponding lacuanrity value;
 "box_sizes"  is the increased box widths of gliding boxes in lacunarity analysis;
 "lacunarity_values" is the corresponding lacunarity values of the increased box sizes given by lacunarity analysis;
 "start" is the start value of the curvature simulation. This function used a power function a * x^b + c to simulate the lacunarity curvature. Through
@@ -150,7 +150,7 @@ This function model.pp(data,surv_time,status,covariates,exposure_colnames) calcu
 hazard ratio,confidence interval), posterior possibility, and BIC for each exposure-specific cox model.
 The function model.overall(data,surv_time,status,covariates,exposure_colnames) computes the averaged results of all models.
 
-"data" is a data frame containing the survival time, status,covariates,and exposures delineated by different geographic contexts;
+The parameter "data" is a data frame containing the survival time, status,covariates,and exposures delineated by different geographic contexts;
 "surv_time" is the column name of survivial time;
 "status" is Tthe column name of status;
 "covariates" is a character vector of column names for the fixed covariates;
