@@ -144,7 +144,18 @@ method: perpendicular distances
 
 ## Bayesian model averaging pooled cox regression
 
-add later
+This function model.pp(data,surv_time,status,covariates,exposure_colnames) calculates the coefficients (i.e.,beta, p-value, z-value, standard error, 
+hazard ratio,confidence interval), posterior possibility, and BIC for each exposure-specific cox model.
+The function model.overall(data,surv_time,status,covariates,exposure_colnames) computes the averaged results of all models.
+
+"data" is a data frame containing the survival time, status,covariates,and exposures delineated by different geographic contexts;
+"surv_time" is the column name of survivial time;
+"status" is Tthe column name of status;
+"covariates" is a character vector of column names for the fixed covariates;
+"exposure_colnames" is a character vector of column names for the exposure variables, the column names of exposures should be the combination of prefixes 
+and buffer sizes, and the same exposures should have the same prefixes, for example, the column names of greenspace for buffer sizes 100, 200, 300, 400 
+could be bufnd100, bufnd200,bufnd300,bufnd400; for noise could be bufno100, bufno200, bufno300, and bufno400.Note, the prefixes can only be alphabets, 
+e.g., bufnd,bufpm,bufno..
 
 ```r
 # Usage
