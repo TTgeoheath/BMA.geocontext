@@ -30,6 +30,7 @@ model.overall ( the averaged results for all models)
 data(test_lacunarity, package = "BMA.geocontext")
 test_lacunarity <- as.data.frame(la)
 data(test_survival,  package = "BMA.geocontext")
+test_survival <- as.data.frame(test_survial)
 # Results
  ---------- test_lacunarity
     box_width lacunarity_values
