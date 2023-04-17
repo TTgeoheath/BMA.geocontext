@@ -27,7 +27,8 @@ The variables in "test_survival" are as follows: 1) Survival_time: the death,sur
 participates expericed death (1) or not (0) during the period. 3)The age of participates at the baseline. 4) Income: the yearly household income (Euro in 
 k). 5) Gender: the gender of participants at the basedline (male=1, felmale=2). 6) Origin: the origin of perticipants (Dutch=1, non-Dutch=0). 
 7)Urbanization: the urbanization levels of the municipality where the participants live in. 8) bufDN100...900: The NDVI was delineated by buffer sizes 
-from 100 to 900 meters. 9) 
+from 100 to 900 meters. 9) bufPM100...400: The PM2.5 was delineated by buffer sizes from 100 to 400 meters. 10) bufno100...900: The noise was delineated 
+by buffer sizes from 100 to 900 meters.
 
 ```r
 # Usage
