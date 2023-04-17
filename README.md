@@ -19,10 +19,15 @@ library(BMA.geocontext)
 ```
 
 ## Load the test data
+We provided two artificial test datasets. The data "test_lacunarity" represents gridded exposure surfaces and is used to test the function lac.limit() for 
+detecting the precise upper limit of the lacunarity curve. The data “test_survival” is used to test the model.pp() and returns the coefficients and 
+posterior coefficient of each model. The function model.overall() provides the averaged results across  the models. 
 
-We provided two datasets to test our functions. The data "test_lacunarity" is used to test the function lac.limit for detecting the precise upper limit 
-of lacunarity curve. The data "test_survival" is used to test the model.pp (return the coefficients and posterial coefficient of each model) and 
-model.overall ( the averaged results for all models)
+The variables in "test_survival" are as follows: 1) Survival_time: the death,survival, cencoring time in years of the participants. 2) Status: the 
+participates expericed death (1) or not (0) during the period. 3)The age of participates at the baseline. 4) Income: the yearly household income (Euro in 
+k). 5) Gender: the gender of participants at the basedline (male=1, felmale=2). 6) Origin: the origin of perticipants (Dutch=1, non-Dutch=0). 
+7)Urbanization: the urbanization levels of the municipality where the participants live in. 8) bufDN100...900: The NDVI was delineated by buffer sizes 
+from 100 to 900 meters. 9) 
 
 ```r
 # Usage
