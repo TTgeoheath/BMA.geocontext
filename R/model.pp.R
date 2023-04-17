@@ -81,7 +81,7 @@ model.pp <- function(data,surv_time,status,covariates,exposure_colnames) {
      dataset <- data[,x]
      dataset <- cbind(dataset,surv_time,status, covariates)
      # Fit the Cox regression model
-     cox_models <- coxph(Surv(surv_time,status) ~ ., data = dataset,na.action=na.omit)
+     cox_models <- survival::coxph(Surv(surv_time,status) ~ ., data = dataset,na.action=na.omit)
      #cox_models <- coxph(Surv(Survival_time,Status) ~ ., data = cox_models,na.action=na.omit)
      # Return the fitted model
      return(cox_models)
