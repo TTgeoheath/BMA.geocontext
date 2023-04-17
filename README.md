@@ -99,7 +99,6 @@ Default plot formula:  .~.x
 where “.” stands for ‘lacunarity_values’
 Recommended range of argument box_width: not specified
 Available range of argument box_width: [60, 10260]
-## Critical soil moisture and maximum bulk density (Proctor test)
 > View(LA)
    box_width lacunarity_values
 2          60          2.175266
