@@ -20,11 +20,12 @@
 #' exposure_colnames <- colnames(data[,c(8:29)])
 #' pp_model <- model.pp(data,"Survival_time","Status",covariates,exposure_colnames)
 #' }
-#' @import 
+#' @import
 #' survival
 #' MASS
 #' dplyr
 #' @importFrom stats BIC confint na.omit 
+#' @importFrom survival coxph
 #' @export
 model.pp <- function(data,surv_time,status,covariates,exposure_colnames) {
   # data: a data frame containing the covariates, survival time, status, and exposures
