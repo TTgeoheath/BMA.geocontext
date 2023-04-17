@@ -69,9 +69,9 @@ test_survival <- as.data.frame(test_survial)
 
 ```
 ## Lacunarity analysis
-The function lac.limit(data, box_sizes, lacunarity_values,start = list(a = 1, b = -1, c = 1)) computes the point where the lacunarity curve flattened out.
+The function gbl(init_boxwidth,end_boxwidth,image, obserwin = Frame(image), raster_type = c("continuous", "binary")) calculates the lacunarity values against increased box width.
 
-The parameter "data" is a data.frame that includes the box widths of the gliding boxes and their corresponding lacunary value; "box_sizes” is the increased box widths of gliding boxes in lacunarity analysis; "lacunarity_values" is the corresponding lacunarity values of the increased box sizes given by lacunarity analysis; "start" is the start value of the curvature simulation. The function is based on a power function a * x^b + c to model the lacunarity curvature. Through simulation, the flattened point can be obtained by computing the maximum curvature. A start=list(a = 1, b = -1, c = 1) was set as default. The users can adjust the function’s parameters.
+The parameter "init_boxwidth" refers to the box width, while the parameter “end_boxwidth” refers to the box width for your identified last box; "image" is the the raster layer input; "obserwin" is the optional observation window. If provided, it will be the intersection of the specified observation window (obserwin) and the non-NA pixels in the input image (image); "raster_type" is the selection of the raster type. It can be either "continuous" or "binary".
 
 ```r
 
