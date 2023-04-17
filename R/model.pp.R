@@ -68,7 +68,7 @@ model.pp <- function(data,surv_time,status,covariates,exposure_colnames) {
   })
   
   ## transfer it to a list
-  data_list <- lapply(1:nrow(combinations), function(i) as.list(combinations[i, ])) 
+   model_combinations <- lapply(1:nrow(combinations), function(i) as.list(combinations[i, ])) 
   ## Unnamed each elements in the list
    model_combinations <- lapply(model_combinations, function(x) {
      unname(x)
