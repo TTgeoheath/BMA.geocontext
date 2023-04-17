@@ -139,19 +139,15 @@ method: perpendicular distances
 ```
 
 ## Bayesian model averaging pooled cox regression
+The function model.pp(data,surv_time,status,covariates,exposure_colnames) calculates the coefficients (i.e., beta, p-value, z-value, standard error, 
+hazard ratio, confidence interval), posterior possibility, and BIC for each cox model. The function 
+model.overall(data,surv_time,status,covariates,exposure_colnames) computes the averaged results of all models.
 
-This function model.pp(data,surv_time,status,covariates,exposure_colnames) calculates the coefficients (i.e.,beta, p-value, z-value, standard error, 
-hazard ratio,confidence interval), posterior possibility, and BIC for each exposure-specific cox model.
-The function model.overall(data,surv_time,status,covariates,exposure_colnames) computes the averaged results of all models.
-
-The parameter "data" is a data frame containing the survival time, status,covariates,and exposures delineated by different geographic contexts;
-"surv_time" is the column name of survivial time;
-"status" is Tthe column name of status;
-"covariates" is a character vector of column names for the fixed covariates;
-"exposure_colnames" is a character vector of column names for the exposure variables, the column names of exposures should be the combination of prefixes 
-and buffer sizes, and the same exposures should have the same prefixes, for example, the column names of greenspace for buffer sizes 100, 200, 300, 400 
-could be bufnd100, bufnd200,bufnd300,bufnd400; for noise could be bufno100, bufno200, bufno300, and bufno400.Note, the prefixes can only be alphabets, 
-e.g., bufnd,bufpm,bufno..
+The parameter "data" is a data.frame containing the survival time, status, covariates, and exposures delineated by different geographic contexts; 
+"surv_time" is the column name of survival time; "status" is the column name of status; "covariates" is a character vector of column names for the fixed 
+covariates; "exposure_colnames" is a character vector of column names for the exposure variables; the column names of exposures should be the combination 
+of prefixes and buffer sizes, and the same exposures should have the same prefixes (e.g., the column names of green space for buffer sizes 100, 200, 300, 
+400 should be  bufnd100, bufnd200, bufnd300, and bufnd400). Note, the prefixes can only be letters, e.g., bufnd, bufpm, bufno.
 
 ```r
 # Usage
@@ -161,7 +157,8 @@ exposure_col<- colnames(test_survival[,c(8:29)])
 pp <- model.pp(test_survival,"Survival_time","Status",cova,exposure_col)
 overall <- model.overall(test_survival,"Survival_time","Status",cova,exposure_col)
 # Results
---------------------each model (sample)----------------------------------------------------------
+> head (pp)
+-----------------------------------each model (sample)----------------------------------------------
                V1       V2       V3           bufND_Beta            bufPM_Beta            bufno_Beta
 model.1  bufND100 bufPM100 bufno100 -0.00888266705382276  -0.00182208209835566 -2.83349355781883e-05
 model.2  bufND200 bufPM100 bufno100   0.0258314756399133 -0.000828747328277729  7.25383170306356e-05
@@ -183,6 +180,8 @@ model.3  0.00204451809228398    0.20204329765327   -0.0708567970295252    0.0325
 model.4  0.00204583541195505   0.177884283601595   -0.0693440260386445    0.0293279443364667
 model.5  0.00204776068059547   0.365232052660598    0.0266507893150063    0.0625487335753162
 model.6  0.00205119483064046    0.43151203978179    0.0758226887780906    0.0780068468153593
+
+>View(overall)
 --------------------------------------overall------------------------------------------------------
                                [,1]
 bufND_Beta              3.014981e-02
