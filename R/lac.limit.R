@@ -39,10 +39,12 @@ lac.limit<- function(data, box_sizes, lacunarity_values,start = list(a = 1, b = 
     return(a * x^b + c)
   }
   # Calculate the box size where the maximum curvature appears
-  a <<- coef(power_model)["a"]
-  b <<- coef(power_model)["b"]
-  c <<- coef(power_model)["c"]
+  a <- coef(power_model)["a"]
+  b <- coef(power_model)["b"]
+  c <- coef(power_model)["c"]
   
-  result <- soilphysics::maxcurv(x.range = range(box_sizes), fun = fitted_power_curve,method = "pd")
+  # Use do.call() to pass the parameters to the fitted_power_curve function
+  result <- soilphysics::maxcurv(x.range = range(box_sizes), fun = function(x) do.call(fitted_power_curve, c(list(x), coef(power_model))), method = "pd")
+  
   return(result)
 }
