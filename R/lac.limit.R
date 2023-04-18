@@ -41,9 +41,7 @@ lac.limit<- function(data, box_sizes, lacunarity_values,start = list(a = 1, b = 
   fitted_power_curve <- function(x) a * x^b+c
   
   # Calculate the box size where the maximum curvature appears
- # result <- #
-   
- result <- maxcurv(x.range = range(box_sizes), fun = fitted_power_curve,method = "pd")
- result <- print(result)
- return(result)
+  
+  result <- soilphysics::maxcurv(x.range = range(box_sizes), fun = fitted_power_curve,method = "pd")
+  return(result)
 }
