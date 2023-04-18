@@ -33,7 +33,6 @@ model.pp <- function(data,surv_time,status,covariates,exposure_colnames) {
   # status: the column name of status, for instance. "status".
   # covariates: a character vector of column names for the fixed covariates
   # exposure_colnames: a character vector of column names for the exposure variables
-  # number_exposures: the number of different exposures included in the model
   if (!is.data.frame(data))
     stop("data must be a data.frame!")
   if (!is.character(surv_time))
