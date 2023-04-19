@@ -211,5 +211,15 @@ bufno_higherci_overall  1.004475e+00
 ------------------------------------end--------------------------------------------------------------
  
 # Citation and references
+Labib, S. M., Lindley, S. & Huck, J. J. Scale effects in remotely sensed greenspace metrics and how to mitigate them for environmental health exposure
+assessment
 
-add later
+Mandelbrot, B. B. A Fractal’s Lacunarity, and how it can be Tuned and Measured. in Fractals in Biology and Medicine (1994)
+
+Plotnick, R. E., Gardner, R. H., Hargrove, W. W., Prestegaard, K. & Perlmutter, M. Lacunarity analysis: A general technique for the analysis of spatial 
+patterns. Phys Rev E 53, 5461–5468 (1996)
+
+Dong, P. Test of a new lacunarity estimation method for image texture analysis. Int J Remote Sens 21, 3369–3373 (2000)
+
+Volinsky, C. T., Madigan, D., Raftery, A. E. & Kronmal, R. A. Bayesian Model Averaging in Proportional Hazard Models: Assessing the Risk of a Stroke.
+RStat Soc Ser C Appl Stat 46, 433–448 (1997)
