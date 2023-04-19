@@ -20,31 +20,26 @@
 #' minpack.lm
 #' @importFrom stats coef
 #' @export
-lac.limit<- function(data, box_sizes, lacunarity_values,start = list(a = 1, b = -1, c = 1)) {
+lac.limit <- function(data,box_widths, lacunarity_values, start = list(a = 1, b = -1, c = 1)) {
   if (!is.data.frame(data))
-    stop("data must be a data.frame!")
-  if (!is.character(box_sizes))
-    stop("'box_sizes'must be a charactor!")
-  if (!is.character(lacunarity_values))
-    stop("'lacunarity_values' must be a charactor!")
+   stop("data must be a data.frame!")
+  if (!is.numeric(box_widths))
+  stop("'box_widths' must be a numeric vector!")
+  if (!is.numeric(lacunarity_values))
+    stop("'lacunarity_values' must be numeric vector!")
   if (!is.list(start))
     stop("start must be a list!")
-  # Step 1: extract the box_sizes and lacunarity from the dataset
-  box_sizes <- data[,c(box_sizes)]
-  lacunarity_values <- data[,c(lacunarity_values)]
-  # Fit a power function to the data
-  power_model <- nlsLM(lacunarity_values ~ a * box_sizes^b+c,data=data,start=start)
-  # Create a function for the fitted power curve
-  fitted_power_curve <- function(x, a, b, c) {
-    return(a * x^b + c)
-  }
-  # Calculate the box size where the maximum curvature appears
+  
+  # Step 1
+  ## Fit the data to a power function
+  power_model <- nlsLM(lacunarity_values ~ a * box_widths^b + c, data = data, start = start)
+  
+  ## Extract the coefficients
   a <- coef(power_model)["a"]
   b <- coef(power_model)["b"]
   c <- coef(power_model)["c"]
+  # Calculate the box size where the maximum curvature appears
+  max_curvature <- soilphysics::maxcurv(x.range = range(box_widths), fun = function(x)a* x^b + c, method = "pd")
   
-  # Use do.call() to pass the parameters to the fitted_power_curve function
-  result <- soilphysics::maxcurv(x.range = range(box_sizes), fun = function(x) do.call(fitted_power_curve, c(list(x), coef(power_model))), method = "pd")
-  
-  return(result)
+  return(max_curvature)
 }
