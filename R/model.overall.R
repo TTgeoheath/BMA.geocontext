@@ -41,6 +41,9 @@ model.overall<- function(data,surv_time,status,covariates,exposure_colnames) {
     stop("'covariates' must be a charactor vector!")
   if (!is.character(exposure_colnames))
     stop("'exposure_colnames' must be a charactor vector!")
+  if (requireNamespace("survival") != TRUE){
+    stop("survival package must be installed to develpe cox models")
+  }
   # Step 1: Create all possible combinations of models
   surv_time <-data[,c(surv_time)]
   status <- data[,c(status)]
