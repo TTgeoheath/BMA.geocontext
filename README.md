@@ -125,8 +125,11 @@ simulation, the flattened point can be obtained by computing the maximum curvatu
 adjusted it based on their data.
 ```
 # Usage
-  maxcurv <- lac.limit(test_lacunarity, "box_width", "lacunarity_values")
+  box_width <- test_lacunarity[,c("box_width"]
+  lacunarity_values <- test_lacunarity[,c("lacunarity_values"]
+  maxcurv <- lac.limit(test_lacunarity, box_width, lacunarity_values)
 # Results
+> print(maxcurv)
 ------------------------------------
         Maximum curvature point 
  
