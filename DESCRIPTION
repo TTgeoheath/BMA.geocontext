@@ -19,7 +19,7 @@ Imports:
  dplyr,
  soilphysics,
  sf,
-terra,
+ terra,
  RcppRoll,
  spatstat.geom,
  spatstat.core,
